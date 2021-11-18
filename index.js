@@ -11,16 +11,48 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+// map(), filter(), etc. always take a callback function as an argument!!!
 
-const titleCased = (tutorials) => {
-  tutorials.map((arrayStrings) => {
-     const words = arrayStrings.split(' ');
-     debugger
-     console.log(arraystrings)
-      words.map((element) => {
-        return element.charAt(0).toUpperCase() + element.slice(1)});
-  }) .join(' ')
+
+
+const titleCased = () => {
+
+  return tutorials.map(tutorial => {
+    // .map creates a new array using tutorials array, the callback function will call one individual element (tutorial)
+    return tutorial.split(' ').map(word => {
+      // split the tutorial into individual parts based upon each 'space', then use map to 
+        //  create a new array which contains arrays of each individual word 
+      return word[0].toUpperCase() + word.slice(1)
+      // Within each element of the new array, every first letter at index[0] is capitalized
+        //  And then add the rest of the word from index 1 using slice
+    }).join(' ')
+    // join all of the individual words of the array back into one array
+  })
 }
+
+// const titleCased = () => tutorials.map(tutorial => tutorial.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' '))
+
+// const titleCased = () => {
+//   return tutorials.map(tutorial => tutorial.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' '))
+// }
+
+// const titleCased = () => {
+//   return tutorials.map(tutorial => {
+//     return tutorial.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ') 
+//   })
+// }
+
+// const titleCased = () => {
+//   return tutorials.map(tutorial => {
+//     return tutorial.split(' ').map(word => {
+//       return word[0].toUpperCase() + word.slice(1)
+//     }) .join(' ')
+//   })
+// }
+
+
+
+
 
 
 //  const tutorial = 'you can do it'
@@ -29,20 +61,7 @@ const titleCased = (tutorials) => {
 //  const youCanDoIt = capitalize.join(' ')
 
 
-// const titleCased = (str) =>{
-//   return tutorials.toLowerCase().split(' ').map(function(word) {
-//     return (word.charAt(0).toUpperCase() + word.slice(1));
-//   }).join(' ');
-// }
-// titleCased(tutorials);
 
-//tutorials.map
-  //make a new array after iterating through tutorials array and perfoming function on it
-    //const titleCased = map(tutorials.split(' '), function (...)) {
-      //
-    //}
-
-//     titleCased.
 
 
 
